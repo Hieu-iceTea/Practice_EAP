@@ -3,6 +3,39 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">HRM - Humman Resources Management</h1>
+    <p>Learn about <a href="http://fb.com/Hieu.iceTea">Hiếu iceTea</a>.</p>
 </div>
+
+
+
+@model IQueryable<Employees>
+
+<table class="table table-hover table-striped">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Project</th>
+            <th scope="col">Function</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ProductID</th>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.Phone</td>
+            <td>@item.Project</td>
+            <td>
+                <button class="btn btn-sm btn-info">View</button>
+                <button class="btn btn-sm btn-warning">Edit</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
